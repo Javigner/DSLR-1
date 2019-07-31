@@ -4,7 +4,8 @@ import sys
 import argparse
 import pandas as pd
 
-from df_analysis import Describe
+from describe_files.df_analysis import Describe
+
 
 def ft_argparser():
 
@@ -16,12 +17,15 @@ def ft_argparser():
 
 def main(args):
 
-	describe = Describe(pd.read_csv(args.data_file))
+	try:
+		describe = Describe(pd.read_csv(args.data_file))
+	except Exception as e:
+		print(f"Please specify a correct file.\n{e}")
+		sys.exit(0)
+
 	describe.ft_describe()
-	# print(describe.df_in.describe())
 	print(describe.df_out)
-
-
+	return None
 
 
 if __name__ == "__main__":

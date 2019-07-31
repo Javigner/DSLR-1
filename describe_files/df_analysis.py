@@ -89,4 +89,5 @@ class Describe:
 					dic_results[k] = func(self.df_in[col].values)
 				self.df_out[col] = self.df_out['metrics'].map(dic_results)
 		self.df_out = self.df_out.set_index('metrics')
+		del self.df_out.index.name
 
