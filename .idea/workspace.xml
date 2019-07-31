@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4e24206d-18ff-4f76-9831-0d9ffa0eabab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/describe.py" beforeDir="false" afterPath="$PROJECT_DIR$/describe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/df_analysis.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_home.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_pandas.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/histogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/histogram.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +18,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/histogram.py">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/scatter_plot.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="429">
-                  <caret line="36" column="122" selection-start-line="36" selection-start-column="122" selection-end-line="36" selection-end-column="122" />
+                <state relative-caret-position="158">
+                  <caret line="22" column="80" lean-forward="true" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="80" />
                   <folding>
                     <element signature="e#24#34#0" expanded="true" />
                   </folding>
@@ -33,11 +30,14 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/ENVS/DSLR_venv/lib/python3.7/site-packages/pandas/core/frame.py">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pair_plot.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="236">
-                  <caret line="2944" selection-start-line="2944" selection-end-line="2944" />
+                <state relative-caret-position="625">
+                  <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+                  <folding>
+                    <element signature="e#24#34#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -46,23 +46,14 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/describe.py">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/histogram.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+                <state relative-caret-position="390">
+                  <caret line="26" column="57" lean-forward="true" selection-end-line="69" />
                   <folding>
                     <element signature="e#24#34#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/describe_files/df_analysis.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="324">
-                  <caret line="83" column="50" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="50" />
                 </state>
               </provider>
             </entry>
@@ -71,6 +62,11 @@
       </split-second>
     </splitter>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>kde</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -78,21 +74,23 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/df_analysis.py" />
-        <option value="$PROJECT_DIR$/describe.py" />
         <option value="$PROJECT_DIR$/histogram.py" />
+        <option value="$PROJECT_DIR$/scatter_plot.py" />
+        <option value="$PROJECT_DIR$/describe.py" />
+        <option value="$PROJECT_DIR$/pair_plot.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="2560" />
-    <option name="height" value="1337" />
+    <option name="height" value="1440" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -109,7 +107,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -188,17 +185,19 @@
       <option name="presentableId" value="Default" />
       <updated>1564486720892</updated>
       <workItem from="1564486723925" duration="13617000" />
-      <workItem from="1564561597629" duration="8233000" />
+      <workItem from="1564561597629" duration="9426000" />
+      <workItem from="1564577666778" duration="10743000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21850000" />
+    <option name="totallyTimeSpent" value="33786000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1337" extended-state="0" />
+    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10881652" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1096108" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -212,7 +211,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.50923693" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.30291972" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.329927" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -227,29 +226,10 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/df_analysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="91" column="34" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
-          <folding>
-            <element signature="e#1#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/describe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#24#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/df_analysis.py" />
     <entry file="file://$PROJECT_DIR$/describe_files/df_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
+        <state relative-caret-position="543">
           <caret line="83" column="50" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="50" />
         </state>
       </provider>
@@ -263,8 +243,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/histogram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="36" column="122" selection-start-line="36" selection-start-column="122" selection-end-line="36" selection-end-column="122" />
+        <state relative-caret-position="390">
+          <caret line="26" column="57" lean-forward="true" selection-end-line="69" />
+          <folding>
+            <element signature="e#24#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///sgoinfre/goinfre/Perso/gvannest/ENVS/DSLR_venv/lib/python3.7/site-packages/pandas/core/indexing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="1270" selection-start-line="1270" selection-end-line="1270" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/describe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding>
+            <element signature="e#24#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scatter_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="22" column="80" lean-forward="true" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="80" />
+          <folding>
+            <element signature="e#24#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pair_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
           <folding>
             <element signature="e#24#34#0" expanded="true" />
           </folding>

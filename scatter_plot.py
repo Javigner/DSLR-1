@@ -11,12 +11,11 @@ def ft_argparser():
 
 	parser = argparse.ArgumentParser()
 	parser.add_argument("data_file", type=str, help="csv file containing the data to analyze")
-	parser.add_argument("-k", "--kde",  action="store_true", help="Plot a kernel density function around histograms for better analysis")
 	args = parser.parse_args()
 	return args
 
 
-def draw_histogram(df, kde):
+def draw_scatter(df):
 	num_ln = 4
 	num_col = 4
 	plt.style.use('ggplot')
@@ -30,7 +29,7 @@ def draw_histogram(df, kde):
 			j = 0 if j == num_col else j
 			for house, c in zip(df['Hogwarts House'].unique().tolist(), colors):
 				serie = df[df['Hogwarts House'] == house][col].dropna()
-				g = sns.distplot(serie, kde=kde, hist=True, ax=axs[i,j], color=c, axlabel=False, label=house)
+				g = sns.scatterplot(x=serie, kde=kde, hist=True, ax=axs[i,j], color=c, axlabel=False, label=house)
 				# g.get_legend().remove()
 			axs[i, j].set_title(col)
 			if col == "Care of Magical Creatures":
@@ -59,11 +58,10 @@ def main(args):
 		print(f"Please specify a correct file.\n{e}")
 		sys.exit(0)
 	df = df.drop(labels='Index', axis=1)
-	draw_histogram(df, args.kde)
+	draw_scatter(df)
 	return None
 
 
 if __name__ == "__main__":
 	args = ft_argparser()
 	main(args)
-
