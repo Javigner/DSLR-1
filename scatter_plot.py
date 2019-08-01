@@ -15,39 +15,24 @@ def ft_argparser():
 	return args
 
 
-def draw_scatter(df):
-	num_ln = 4
-	num_col = 4
+def draw_scatterplot(df):
 	plt.style.use('ggplot')
-	plt.rc('legend', fontsize=12)
-	fig, axs = plt.subplots(num_ln, num_col, tight_layout=True, figsize=(25,13))
-	i = 0
-	j = 1
-	colors = ['#00006d', '#00613e', "#ae0001", '#f0c75e']
-	for col in df.columns:
-		if df[col].dtype == np.float64:
-			j = 0 if j == num_col else j
-			for house, c in zip(df['Hogwarts House'].unique().tolist(), colors):
-				serie = df[df['Hogwarts House'] == house][col].dropna()
-				g = sns.scatterplot(x=serie, kde=kde, hist=True, ax=axs[i,j], color=c, axlabel=False, label=house)
-				# g.get_legend().remove()
-			axs[i, j].set_title(col)
-			if col == "Care of Magical Creatures":
-				for side in ["right", "left", "top", "bottom"]:
-					axs[i,j].spines[side].set_color('red')
-					axs[i,j].spines[side].set_linewidth(1.2)
-			i = i + 1 if j == num_col - 1 else i
-			j += 1
-	while j < num_col:
-		axs[i, j].axis('off')
-		j += 1
-	axs[0, 0].axis('off')
-	axs[0,1].set_ylabel("Frequency of students")
-	axs[0,1].set_xlabel("Grades")
-	handles, labels = axs[3,0].get_legend_handles_labels()
-	axs[0, 0].legend(handles, labels, loc="lower center", borderpad=1.5, labelspacing=1.25)
-	axs[0,0].set_title('Students repartition by subject', fontsize=20, fontweight='bold')
+	fig = plt.figure(num='Similar features', figsize=(13,13))
+	ax = plt.subplot(111)
+	colors = {'Ravenclaw': '#00006d', 'Slytherin': '#00613e', 'Gryffindor': "#ae0001", 'Hufflepuff': '#f0c75e'}
+	sns.scatterplot(x="Care of Magical Creatures", y="Arithmancy", hue='Hogwarts House', palette=colors, data=df, ax=ax)
+	ax.legend(loc="upper right")
+	plt.savefig('scatter_plot.png')
 	plt.show()
+	return None
+
+
+def ft_fill_nan(df):
+	houses = ['Ravenclaw', 'Slytherin', 'Gryffindor', 'Hufflepuff']
+	list_df = []
+	for h in houses:
+		list_df.append(df[df['Hogwarts House'] == h].fillna(df[df['Hogwarts House'] == h].mean()))
+	return pd.concat(list_df)
 
 
 def main(args):
@@ -58,7 +43,8 @@ def main(args):
 		print(f"Please specify a correct file.\n{e}")
 		sys.exit(0)
 	df = df.drop(labels='Index', axis=1)
-	draw_scatter(df)
+	df = ft_fill_nan(df)
+	draw_scatterplot(df)
 	return None
 
 

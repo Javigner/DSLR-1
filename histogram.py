@@ -31,7 +31,6 @@ def draw_histogram(df, kde):
 			for house, c in zip(df['Hogwarts House'].unique().tolist(), colors):
 				serie = df[df['Hogwarts House'] == house][col].dropna()
 				g = sns.distplot(serie, kde=kde, hist=True, ax=axs[i,j], color=c, axlabel=False, label=house)
-				# g.get_legend().remove()
 			axs[i, j].set_title(col)
 			if col == "Care of Magical Creatures":
 				for side in ["right", "left", "top", "bottom"]:
@@ -48,8 +47,8 @@ def draw_histogram(df, kde):
 	handles, labels = axs[3,0].get_legend_handles_labels()
 	axs[0, 0].legend(handles, labels, loc="lower center", borderpad=1.5, labelspacing=1.25)
 	axs[0,0].set_title('Students repartition by subject', fontsize=20, fontweight='bold')
-	plt.show()
-
+	plt.savefig('histogram.png')
+	return None
 
 def main(args):
 
