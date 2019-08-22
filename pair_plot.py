@@ -6,8 +6,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def ft_argparser():
 
+def ft_argparser():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("data_file", type=str, help="csv file containing the data to analyze")
 	args = parser.parse_args()
@@ -18,9 +18,10 @@ def draw_pairplot(df):
 	plt.style.use('ggplot')
 	colors = {'Ravenclaw': '#00006d', 'Slytherin': '#00613e', 'Gryffindor': "#ae0001", 'Hufflepuff': '#f0c75e'}
 	g = sns.pairplot(df, hue='Hogwarts House', palette=colors)
-
+	g._legend.remove()
 	plt.tight_layout()
-	plt.savefig('pair_plot.png')
+	plt.savefig('plots/pair_plot.png')
+	plt.show()
 	return None
 
 
@@ -33,7 +34,6 @@ def ft_fill_nan(df):
 
 
 def main(args):
-
 	try:
 		df = pd.read_csv(args.data_file)
 	except Exception as e:

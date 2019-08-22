@@ -3,6 +3,7 @@ import math
 import pandas as pd
 import numpy as np
 
+
 class Describe:
 
 	def __init__(self, df):
@@ -10,9 +11,7 @@ class Describe:
 		self.df_out_index = ['count', 'mean', 'std', 'min', '25%', '50%', '75%', 'max']
 		self.df_out = pd.DataFrame(self.df_out_index, columns=['metrics'])
 
-
 	def ft_describe(self):
-
 
 		def ft_count(array):
 			c = 0

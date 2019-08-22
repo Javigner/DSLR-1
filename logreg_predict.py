@@ -5,28 +5,21 @@ import pandas as pd
 import argparse
 import pickle
 
-from constants import FEATURES, HOUSES
-from class_predict import Predict
+from predict_files.class_predict import Predict
+
 
 def ft_argparser():
 
 	parser = argparse.ArgumentParser()
-	parser.add_argument("prediction_file", type=str, help="csv file containing the data to analyze")
+	parser.add_argument("prediction_file", type=str, help="csv file containing the data to work a prediction on")
 	args = parser.parse_args()
 	return args
-
-
-# def print_output(prediction, confidence=None, conf_level=None):
-# 	print(f"Mean estimation of the price of your car : {prediction:.0f} euros")
-# 	if confidence:
-# 		print(f"Prediction interval at {conf_level * 100:.0f} % : [{prediction - confidence:.0f}, {prediction + confidence:.0f}]")
-# 	return None
 
 
 def main(args):
 
 	try:
-		with open('data.pkl', 'rb') as f:
+		with open('logreg_files/data.pkl', 'rb') as f:
 			data = pickle.load(f)
 	except Exception as e:
 		print(f"Please provide a valid data file where the parameters of your trained model have been recorded.\n{e}")
@@ -38,14 +31,10 @@ def main(args):
 		sys.exit(0)
 
 	pred = Predict(df, data)
-	print(pred.df_testing.head())
-	print(pred.df_testing_norm.head())
 	pred.predict()
-	print(pred.df_testing_norm.head())
-	print(pred.final_output())
+	pred.final_output()
 
 	return None
-
 
 
 if __name__ == "__main__":

@@ -7,6 +7,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 def ft_argparser():
 
 	parser = argparse.ArgumentParser()
@@ -47,8 +48,10 @@ def draw_histogram(df, kde):
 	handles, labels = axs[3,0].get_legend_handles_labels()
 	axs[0, 0].legend(handles, labels, loc="lower center", borderpad=1.5, labelspacing=1.25)
 	axs[0,0].set_title('Students repartition by subject', fontsize=20, fontweight='bold')
-	plt.savefig('histogram.png')
+	plt.savefig('plots/histogram.png')
+	plt.show()
 	return None
+
 
 def main(args):
 

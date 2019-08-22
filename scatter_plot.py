@@ -2,10 +2,10 @@
 
 import sys
 import argparse
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 
 def ft_argparser():
 
@@ -22,7 +22,7 @@ def draw_scatterplot(df):
 	colors = {'Ravenclaw': '#00006d', 'Slytherin': '#00613e', 'Gryffindor': "#ae0001", 'Hufflepuff': '#f0c75e'}
 	sns.scatterplot(x="Care of Magical Creatures", y="Arithmancy", hue='Hogwarts House', palette=colors, data=df, ax=ax)
 	ax.legend(loc="upper right")
-	plt.savefig('scatter_plot.png')
+	plt.savefig('plots/scatter_plot.png')
 	plt.show()
 	return None
 
