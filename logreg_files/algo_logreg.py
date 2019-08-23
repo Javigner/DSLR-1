@@ -208,7 +208,6 @@ class Algo:
 										   ax=fig.add_subplot(2, 2, i + 1),
 										   title=f"Cost evolution for {h} classifier",
 										   x_label="Iterations", y_label="J_history")
-
 			return graphs_cost
 
 		graphs_cost = init_graphs()

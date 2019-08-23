@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import os
 import argparse
 import numpy as np
 import pandas as pd
@@ -9,7 +10,6 @@ import seaborn as sns
 
 
 def ft_argparser():
-
 	parser = argparse.ArgumentParser()
 	parser.add_argument("data_file", type=str, help="csv file containing the data to analyze")
 	parser.add_argument("-k", "--kde",  action="store_true", help="Plot a kernel density function around histograms for better analysis")
@@ -48,6 +48,8 @@ def draw_histogram(df, kde):
 	handles, labels = axs[3,0].get_legend_handles_labels()
 	axs[0, 0].legend(handles, labels, loc="lower center", borderpad=1.5, labelspacing=1.25)
 	axs[0,0].set_title('Students repartition by subject', fontsize=20, fontweight='bold')
+	if not os.path.exists('./plots'):
+		os.makedirs('./plots')
 	plt.savefig('plots/histogram.png')
 	plt.show()
 	return None

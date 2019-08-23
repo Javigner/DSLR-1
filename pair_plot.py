@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import os
 import argparse
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -20,6 +21,8 @@ def draw_pairplot(df):
 	g = sns.pairplot(df, hue='Hogwarts House', palette=colors)
 	g._legend.remove()
 	plt.tight_layout()
+	if not os.path.exists('./plots'):
+		os.makedirs('./plots')
 	plt.savefig('plots/pair_plot.png')
 	plt.show()
 	return None
